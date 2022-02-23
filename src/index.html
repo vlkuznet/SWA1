@@ -11,13 +11,19 @@
 <body>
     <main>
     <h1>Vlad's SWA for testing</h1>
-    <p>Bolded text should be sent by our API: <b id="name">...</b></p>
+    <p>Bolded text should be sent by our API: <b id="name">...</b></p> <br/>
+    <p>Bolded text should be sent by our storage directly: <b id="stor">...</b></p> <br/>
+    <p>Bolded text should be sent by our storage proxy: <b id="prox">...</b></p> <br/>
     </main>
 
     <script>
     (async function() {
         const { text } = await( await fetch(`/api/HttpTrigger1`)).json();
         document.querySelector('#name').textContent = text;
+        const { stor } = await( await fetch(`/api/HttpTrigger1`)).json();
+        document.querySelector('#stor').textContent = stor;
+        const { prox } = await( await fetch(`/api/HttpTrigger1`)).json();
+        document.querySelector('#prox').textContent = prox;
     }())
     </script>
 </body>
