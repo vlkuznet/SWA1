@@ -26,12 +26,12 @@
         let res1  =  await fetch(`/api/HttpTrigger1`, opts);
         let text = await res1.text();
         document.querySelector('#name').textContent = text;
-        let res2  =  await fetch(`https://vladstorageaccount.blob.core.windows.net/publiclyopencontainer/smallTestFile.txt?sp=r&st=2022-02-23T17:11:13Z&se=2023-02-24T01:11:13Z&spr=https&sv=2020-08-04&sr=b&sig=OUOdVd2ruEDWNVLLOpqt4FR01rkEPjzdJzqdy0%2B%2FjOU%3D`, opts);
-        let stor = await res2.text();
-        document.querySelector('#stor').textContent = stor;
         let res3  =  await fetch(`/api/file`, opts);
         let prox = await res3.text();
         document.querySelector('#prox').textContent = prox;
+        let res2  =  await fetch(`https://vladstorageaccount.blob.core.windows.net/publiclyopencontainer/smallTestFile.txt?sp=r&st=2022-02-23T17:11:13Z&se=2023-02-24T01:11:13Z&spr=https&sv=2020-08-04&sr=b&sig=OUOdVd2ruEDWNVLLOpqt4FR01rkEPjzdJzqdy0%2B%2FjOU%3D`, opts);
+        let stor = await res2.text();
+        document.querySelector('#stor').textContent = stor;
     }())
     </script>
 </body>
